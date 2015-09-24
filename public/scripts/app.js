@@ -196,7 +196,7 @@ app.collection = Backbone.Collection.extend({
 		this.each(function(model,index){
 			matches.push(model.match(info));
 		});	
-		console.log(matches);
+		_.each('')
 
 	},
 	clearForm: function(){
