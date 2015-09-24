@@ -57,7 +57,6 @@ app.model = Backbone.Model.extend({
 		var matchOut = {
 			name:this.get('name')
 		};
-		console.log(matchIn)
 		_.each(matchIn, function(match, index){
 			switch(index){
 				case 'sex':	
@@ -86,7 +85,7 @@ app.model = Backbone.Model.extend({
 					break;
 				case 'area':
 					if (match === undefined || self.get('area').length === 0){
-						matchOut.time = true;
+						matchOut.area = true;
 					}else{
 						var matchTime = false;
 						for(var t = 0; t < match.length; t++){
@@ -98,8 +97,9 @@ app.model = Backbone.Model.extend({
 					}
 					break;
 				case 'pressure':
+				
 					if (match === undefined || self.get('pressure').length === 0){
-						matchOut.time = true;
+						matchOut.pressure = true;
 					}else{
 						var matchTime = false;
 						for(var t = 0; t < match.length; t++){
@@ -111,9 +111,8 @@ app.model = Backbone.Model.extend({
 					}
 					break;
 				case 'gender':
-				console.log(self.attributess)
 					if (match === undefined || self.get('sex').length === 0){
-						matchOut.time = true;
+						matchOut.gender = true;
 					}else{
 						var matchTime = false;
 						for(var t = 0; t < match.length; t++){
@@ -126,7 +125,7 @@ app.model = Backbone.Model.extend({
 					break;
 				case 'type':
 					if (match === undefined || self.get('type').length === 0){
-						matchOut.time = true;
+						matchOut.type = true;
 					}else{
 						var matchTime = false;
 						for(var t = 0; t < match.length; t++){
@@ -191,12 +190,30 @@ app.collection = Backbone.Collection.extend({
 	},
 	matchTherapist:function(info){
 		$('.mainDiv > div').addClass('hidden');
-		$('.match').removeClass('hidden');
+		$('.match').removeClass('hidden').html('<h2 class="tMatchLabel">Best Matches</h2>');
+
 		var matches = [];
 		this.each(function(model,index){
 			matches.push(model.match(info));
 		});	
-		_.each('')
+		var results = [];
+		_.each(matches, function(match){
+			var total = 0;
+			_.each(match, function(val, ind){
+				if(ind !== 'name' && val ){
+					total++;
+				}
+			});
+			results.push({
+				name:match.name,
+				total:total
+			});
+
+		});
+		_.each(_.sortBy(results,'total').reverse(), function(res, rind){
+			$('.match').append('<div class = "matchElement"><label>' + res.name + '</label><div>'+ Math.round(res.total/6 * 100) +'/100</div></div');
+		});
+
 
 	},
 	clearForm: function(){

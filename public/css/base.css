@@ -138,6 +138,35 @@ h2{
 	border:1px solid;
 }
 
+.matchElement{
+	width:90%;
+	background-color:#eee;
+	margin-bottom: 10px;
+	border-radius:4px;
+	display: inline-block;
+	height:38px;
+	padding-top:5px;
+}
+.matchElement > label{
+	float:left;
+	font-size: 24px;
+	margin-left:15px;
+}
+.matchElement > div{
+	float: right;
+	font-size: 30px;
+	margin-right:15px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
