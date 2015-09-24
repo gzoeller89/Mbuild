@@ -1,0 +1,199 @@
+doctype html
+html(lang="en")
+	head
+		title Massage Envy Prototype
+
+		link(rel='stylesheet', href='/css/base.css')
+		script(src='scripts/libs/jquery-2.1.4.min.js')
+		script(src='scripts/libs/underscore.min.js')
+		script(src='scripts/libs/backbone.min.js')
+		script(src='scripts/app.js')
+
+	body
+		.banner
+			.homeButton
+			h1 Therapist Matcher
+		.content
+			.directory
+				.menu
+					h2.listHeader Therapists
+					.therapistList
+					button.addTherapist + Add Therapist
+					button.matchClient Match Client
+			.mainDiv
+				.overview
+				.profile.hidden
+					.profileUsage
+						h2.profileName
+						.profilePicture
+					.profileOverview
+						.massageTime.question Preferred Length of Massage (minutes)
+						.timeAnswer.answer
+						.pressureLevel.question Available Pressure levels (1 very light - 5 very deep)
+						.pressureAnswer.answer
+						.massageType.question Preferred Massage Type
+						.typeAnswer.answer
+						.massageAreas.question 
+							|Specialized Massage Area(s)
+						.areaAnswer.answer
+						.clientGender.question Preferred Gender of Client
+						.genderAnswer.answer
+				.therapistQuestionnaire.hidden
+					h2.tQuestionnaireLabel Add New Therapist
+					.tQuestionnaireQuestions
+						.question.tqMassageName Therapist Name
+						.answerBox.tqMassageNameInput
+							.answerInput.answerName
+								input.nameInput(type='text',name='tQname', value='')
+						.question.tqMassageTime Therapist Gender (minutes)
+						.answerBox.tqMassageTimeCheckBox
+							.answerInput
+								input.sexInput(type='checkbox',name='tQsex', value='female')
+								label female
+							.answerInput
+								input.sexInput(type='checkbox',name='tQsex', value='male')
+								label male
+						.question.tqMassageTime Preferred Length of Massage (minutes)
+						.answerBox.tqMassageTimeCheckBox
+							.answerInput
+								input.timeInput(type='checkbox',name='tQtime', value='60')
+								label 60
+							.answerInput
+								input.timeInput(type='checkbox',name='tQtime', value='90')
+								label 90
+						.question.tqMassagePressure Preferred Pressure Level (select all that apply)
+						.answerBox.tqMassagePressureCheckBox
+							.answerInput
+								input.pressureInput(type='checkbox',name='tQpressure', value='1')
+								|1 (very light)
+							.answerInput
+								input.pressureInput(type='checkbox',name='tQpressure', value='2')
+								|2 (light)
+							.answerInput
+								input.pressureInput(type='checkbox',name='tQpressure', value='3')
+								|3 (moderate)
+							.answerInput
+								input.pressureInput(type='checkbox',name='tQpressure', value='4')
+								|4 (deep)
+							.answerInput
+								input.pressureInput(type='checkbox',name='tQpressure', value='5')
+								|5 (very deep)
+						.question.tqMassageType Preferred Massage Type
+						.answerBox.tqMassageTypeCheckBox
+							.answerInput
+								input.typeInput(type='checkbox',name='tQtype', value='relaxation')
+								|Relaxation
+							.answerInput
+								input.typeInput(type='checkbox',name='tQtype', value='pain')
+								|Chronic Pain Relief
+						.question.tqMassageArea Preferred Massage Area
+						.answerBox.tqMassageAreaCheckBox
+							.answerInput
+								input.areaInput(type='checkbox',name='tQarea', value='neck')
+								|Neck
+							.answerInput
+								input.areaInput(type='checkbox',name='tQarea', value='upper back')
+								|Upper Back
+							.answerInput
+								input.areaInput(type='checkbox',name='tQarea', value='shoulders')
+								|Shoulders
+							.answerInput
+								input.areaInput(type='checkbox',name='tQarea', value='lower back')
+								|Lower Back
+							.answerInput
+								input.areaInput(type='checkbox',name='tQarea', value='legs')
+								|Legs
+							.answerInput
+								input.areaInput(type='checkbox',name='tQarea', value='arms')
+								|Arms
+							.answerInput
+								input.areaInput(type='checkbox',name='tQarea', value='feet')
+								|Feet
+						.question.tqMassageGender Preferred Massage Gender
+						.answerBox.tqMassageGenderCheckBox
+							.answerInput
+								input.genderInput(type='checkbox',name='tQgender', value='female')
+								|Female
+							.answerInput
+								input.genderInput(type='checkbox',name='tQgender', value='male')
+								|Male
+					button.submitTherapistQuestionnaire Submit
+				.clientQuestionnaire.hidden
+					h2.tClientLabel Enter Client Information
+					.tClientQuestions
+						.question.tCClientGender Client (Your) Gender
+						.answerBox.tCClientGenderCheckBox
+							.answerInput
+								input.CsexInput(type='checkbox',name='ClientGender', value='female')
+								|Female
+							.answerInput
+								input.CsexInput(type='checkbox',name='ClientGender', value='male')
+								|Male
+						.question.tcMassageTime Length of Massage (minutes)
+						.answerBox.tcMassageTimeCheckBox
+							.answerInput
+								input.CtimeInput(type='checkbox',name='tCtime', value='60')
+								label 60
+							.answerInput
+								input.CtimeInput(type='checkbox',name='tCtime', value='90')
+								label 90
+						.question.tCMassagePressure Pressure Level (select all that apply)
+						.answerBox.tCMassagePressureCheckBox
+							.answerInput
+								input.CpressureInput(type='checkbox',name='tCpressure', value='1')
+								|1 (very light)
+							.answerInput
+								input.CpressureInput(type='checkbox',name='tCpressure', value='2')
+								|2 (light)
+							.answerInput
+								input.CpressureInput(type='checkbox',name='tCpressure', value='3')
+								|3 (moderate)
+							.answerInput
+								input.CpressureInput(type='checkbox',name='tCpressure', value='4')
+								|4 (deep)
+							.answerInput
+								input.CpressureInput(type='checkbox',name='tCpressure', value='5')
+								|5 (very deep)
+						.question.tCMassageType Massage Type
+						.answerBox.tCMassageTypeCheckBox
+							.answerInput
+								input.typeInput(type='checkbox',name='tCtype', value='relaxation')
+								|Relaxation
+							.answerInput
+								input.typeInput(type='checkbox',name='tCtype', value='pain')
+								|Chronic Pain Relief
+						.question.tCMassageArea Focus Areas
+						.answerBox.tCMassageAreaCheckBox
+							.answerInput
+								input.CareaInput(type='checkbox',name='tCarea', value='neck')
+								|Neck
+							.answerInput
+								input.CareaInput(type='checkbox',name='tCarea', value='upper back')
+								|Upper Back
+							.answerInput
+								input.CareaInput(type='checkbox',name='tCarea', value='shoulders')
+								|Shoulders
+							.answerInput
+								input.CareaInput(type='checkbox',name='tCarea', value='lower back')
+								|Lower Back
+							.answerInput
+								input.CareaInput(type='checkbox',name='tCarea', value='legs')
+								|Legs
+							.answerInput
+								input.CareaInput(type='checkbox',name='tCarea', value='arms')
+								|Arms
+							.answerInput
+								input.CareaInput(type='checkbox',name='tQarea', value='feet')
+								|Feet
+						.question.tCMassageGender Preferred Masseuse Gender
+						.answerBox.tCMassageGenderCheckBox
+							.answerInput
+								input.CgenderInput(type='checkbox',name='tCgender', value='female')
+								|Female
+							.answerInput
+								input.CgenderInput(type='checkbox',name='tCgender', value='male')
+								|Male
+					button.submitClientQuestionnaire Submit
+				.match.hidden
+
+

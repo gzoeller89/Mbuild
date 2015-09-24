@@ -1,0 +1,11 @@
+{
+  "name": "Massage_Demo_App",
+  "version": "0.0.1",
+  "description": "Demo Functionality Application for Massage Client Matching Algorithm",
+  "dependencies": {
+    "body-parser": "^1.14.0",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "underscore": "^1.8.3"
+  }
+}
