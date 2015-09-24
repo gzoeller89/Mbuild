@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 
 
 app.get('/', function(req, res){
+	console.log('hey')
 	res.render('index',{name:'index'});
 });
 
