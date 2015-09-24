@@ -2,6 +2,10 @@
   "name": "Massage_Demo_App",
   "version": "0.0.1",
   "description": "Demo Functionality Application for Massage Client Matching Algorithm",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "body-parser": "^1.14.0",
     "express": "^4.13.3",
@@ -9,3 +13,4 @@
     "underscore": "^1.8.3"
   }
 }
+
