@@ -3,11 +3,11 @@ var fs = require('fs');
 var bodyParser = require('body-parser');
 var _ = require('underscore');
 
-app.set('port', (process.env.PORT || 5000));
 
-app.use(express.static(__dirname + '/public'));
 
 var app = express();
+app.set('port', (process.env.PORT || 5000));
+
 app.set('view engine', 'jade');
 app.set('views', './views');
 app.use(express.static('public'));
