@@ -1,1 +1,45 @@
-[]
+[{
+    "id": "1",
+  	"sex": "female",
+    "name": "Terry",
+    "time": ["60", "90"],
+    "pressure": [1, 2, 3, 4],
+    "type": ["relaxation", "pain"],
+    "area": ["neck", "shoulders", "legs"],
+    "gender": ["female"]
+}, {
+    "id": "2",
+  	"sex": "male",
+    "name": "Steven",
+    "time": ["60"],
+    "pressure": [2, 3, 4, 5],
+    "type": ["relaxation"],
+    "area": ["legs"],
+    "gender": ["male"]
+}, {
+    "id": "3",
+   	"sex": "male",
+    "name": "Arnold",
+    "time": ["60"],
+    "pressure": [1,3,5],
+    "type": [],
+    "area": ["neck", "shoulders", "legs"],
+    "gender": []
+}, {
+    "id": "4",
+  	"sex": "male",
+    "name": "Luis",
+    "time": ["60"],
+    "pressure": [5,6],
+    "type": ["relaxation"],
+    "area": ["neck"],
+    "gender": []
+}, {
+    "name": "Lisa",
+    "pressure": ["2", "4"],
+  	"sex": "male",
+    "time": ["90"],
+    "type": ["pain"],
+    "area": ["shoulders"],
+    "gender": ["male"]
+}]
